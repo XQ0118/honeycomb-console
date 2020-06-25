@@ -18,8 +18,6 @@ const UserUpsert = (props) => {
 
   const isAdd = _.get(props, 'row') === undefined;
 
-  console.log(isAdd);
-
   const onSubmit = () => {
     form.validateFields().then(async (value) => {
       // TODO: 调用 API，触发用户创建, 回调组件, 刷新用户列表
@@ -63,6 +61,7 @@ const UserUpsert = (props) => {
       title={isAdd ? '新建用户' : '编辑用户'}
       visible={visible}
       onCancel={onClose}
+      destroyOnClose={true}
     >
       <Form form={form} {...layout}>
         <Form.Item
